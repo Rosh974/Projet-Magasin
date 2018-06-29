@@ -1,15 +1,35 @@
 var mongoose = require('mongoose');
 
-var legumeController = {};
+var produitController = {};
+var Produit = require ("../models/Produit"); 
 
-var ProduitSchema = new mongoose.Schema({
-  nomproduit: String,
-  type: String,
-  quantite: Number,
-  prix: Number,
-});
 
 // Liste les produits
+
+produitController.list = function(req, res) {
+  Produit.find({}).exec(function(err, produit){
+      if(err){
+          console.log('Error : ', err);
+      }else{
+          console.log("->",produit);
+          res.render("../views/produit/index",{produits:produit, test:"toto"} );
+      } 
+  });
+};
+
+
+
+// Affiche 1 produit par son id
+
+// produitController.index = function(req, res) {
+//   Produit.findOne({_id:req.params.id}).exec(function(err, produit){
+//       if(err){
+//           console.log('Error : ', err);
+//       }else{
+//           res.render("../views/index",{produit:produit});
+//       } 
+//   });
+// };
 
 
 //redirection à la page de creation de produit
@@ -24,4 +44,4 @@ var ProduitSchema = new mongoose.Schema({
 
 
 //export du module
-module.exports = mongoose.model("Produit", ProduitSchema);
+module.exports = produitController;

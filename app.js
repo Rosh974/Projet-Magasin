@@ -33,8 +33,8 @@ app.use('/users', usersRouter);
 
 
 //routes produits (A MODIFIER)
-// var produits = require("./routes/produits");
-// app.use("/produit", produits);
+var produits = require("./routes/produits");
+app.use("/produits", produits);
 
 
 // catch 404 and forward to error handler
@@ -61,14 +61,4 @@ module.exports = app;
 
 
   
-// Affiche 1 produit par son id
 
-produitController.index = function(req, res) {
-  Produit.findOne({_id:req.params.id}).exec(function(err, produit){
-      if(err){
-          console.log('Error : ', err);
-      }else{
-          res.render("../views/index",{produit:produit});
-      } 
-  });
-};

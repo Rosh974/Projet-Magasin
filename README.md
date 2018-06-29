@@ -20,7 +20,7 @@ Répartition des tâches à accomplir :
 
 - Créer une base de donnée "projetmagasin".   -->   Didier
 
-- Créer une collection " Produits" --> [{"nom produit", "type", "quantité", "prix" }].   -->   Didier
+- Créer une collection " produit" --> [{"nom produit", "type", "quantité", "prix" }].   -->   Didier
 
 - Créer la function pour voir la liste des produits.   -->   Didier
 
@@ -42,9 +42,11 @@ Créer une base de donnée :
 - 
 use projetmagasin
 
-- db.produit.insert( { nom produit: "", type:"" , quantité: "", prix: "" } );
+- db.Produit.insert( { nom produit: "", type:"" , quantité: "", prix: "" } );
 
-- db.produit.find()
+- db.Produit.find()
 
 URI de connexion à la base : mongodb://localhost:27017/projetmagasin
 LE PORT SE TROUVE DANS LE DOSSIER BIN www
+
+{ nom produit: "pain", type:"alimantaire" , quantité: "10", prix: "1" }
