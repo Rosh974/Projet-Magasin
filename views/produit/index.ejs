@@ -15,8 +15,10 @@
     </h1>
     
     <p><% produits.forEach(function(element) {%>
-        <%= element.nomproduit%>
-        <%= element.type%>
+        <span>Nom du Produit : <%= element.nomproduit%></span>
+        <span>Type du produit : <%= element.type%></span>
+        <span>Prix du produit : <%= element.prix%></span>
+        <span>Quantité du produit : <%= element.quantite%></span>
     <%})%>
     <%= test%>
     </p>
