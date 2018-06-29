@@ -18,7 +18,7 @@ Répartition des tâches à accomplir :
 
 - Initialiser le serveur et créer les routes.   -->   Anna
 
-- Créer une base de donnée "Magasin".   -->   Didier
+- Créer une base de donnée "projetmagasin".   -->   Didier
 
 - Créer une collection " Produits" --> [{"nom produit", "type", "quantité", "prix" }].   -->   Didier
 
@@ -38,4 +38,13 @@ Créer la structure de dossier pour le projet :
 - ajout modul express, ejs, mongodb
 
 
+Créer une base de donnée :
+- 
+use projetmagasin
+
+- db.produit.insert( { nom produit: "", type:"" , quantité: "", prix: "" } );
+
+- db.produit.find()
+
+URI de connexion à la base : mongodb://localhost:27017/projetmagasin
 LE PORT SE TROUVE DANS LE DOSSIER BIN www
