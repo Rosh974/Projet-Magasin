@@ -33,9 +33,25 @@ produitController.list = function(req, res) {
 
 
 //redirection à la page de creation de produit
+produitController.create = function(req, res){
+  res.render("../views/produit/ajoutproduit");
+}; 
 
+//enregistrement des produits
 
-//enregistrement des legumes
+produitController.save = function(req, res){
+  var produit = new Produit(req.body);
+
+  produit.save(function(err){
+      if(err){
+          console.log(err);
+          res.render("../views/produit/ajoutproduit");
+      } else{
+          console.log("creation produit OK");
+          res.redirect("/produits" );
+      } 
+  });
+};
 
 
 //edition d'un produit par son id
