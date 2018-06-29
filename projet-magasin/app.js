@@ -54,3 +54,17 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+// Fonction pour afficher la liste des produits 
+
+app.get('/affiche_produits', function (req, res) {
+
+  mongoose.connect(url, function (err) {
+      if (err) { throw err; }
+  });
+  var db = mongoose.connection;
+  db.on('error', console.error.bind(console, 'Erreur lors de la connexion'));
+  db.once('open', function () {
+      console.log("Connexion à la base OK");
+  });
