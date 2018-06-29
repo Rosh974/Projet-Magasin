@@ -31,3 +31,8 @@ Répartition des tâches à accomplir :
 - Créer une fonction pour modifier un produit.   -->   Badrane
 
 - Créer une fonction pour supprimer un produit.   -->   Badrane
+
+
+Créer la structure de dossier pour le projet :
+- execution de la commande suivante :' express projet-magasin --view=ejs'
+- ajout modul express, ejs, mongodb
