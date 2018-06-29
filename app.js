@@ -11,7 +11,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 //mongoose
-var urlMongoDb = "mongodb://localhost/projetmagasin";
+var url = "mongodb://localhost/projetmagasin";
 mongoose.Promise = global.Promise;
 
 mongoose.connect(url)
