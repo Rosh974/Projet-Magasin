@@ -33,8 +33,8 @@ app.use('/users', usersRouter);
 
 
 //routes produits (A MODIFIER)
-// var legumes = require("./routes/legumes");
-// app.use("/legumes", legumes);
+var produits = require("./routes/produits");
+app.use("/legumes", produits);
 
 
 // catch 404 and forward to error handler
