@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+.back{
+
+  background-image:url(../img/food.jpg);
+  background-repeat:no-repeat;
+  background-position:center center;
+  margin-bottom: 70rem;
+}
