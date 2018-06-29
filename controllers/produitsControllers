@@ -1,0 +1,11 @@
+
+
+var ProduitSchema = new mongoose.Schema({
+  nomproduit: String,
+  type: String,
+  quantite: Number,
+  prix: Number,
+});
+
+
+// Ajoute un légume
