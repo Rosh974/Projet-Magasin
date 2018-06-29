@@ -33,8 +33,8 @@ app.use('/users', usersRouter);
 
 
 //routes produits (A MODIFIER)
-// var produits = require("./routes/produits");
-// app.use("/produit", produits);
+var produits = require("./routes/produits");
+app.use("/produits", produits);
 
 
 // catch 404 and forward to error handler
@@ -58,3 +58,7 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+
+  
+
