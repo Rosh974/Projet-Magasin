@@ -34,7 +34,7 @@ app.use('/users', usersRouter);
 
 //routes produits (A MODIFIER)
 // var produits = require("./routes/produits");
-// app.use("/legumes", produits);
+// app.use("/produit", produits);
 
 
 // catch 404 and forward to error handler
@@ -52,5 +52,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
+
 
 module.exports = app;
