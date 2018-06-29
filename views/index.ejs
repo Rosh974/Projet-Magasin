@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <header class="container">
+    <div class="row">
+
+      <h1>Liste des produits</h1>
+
+      <ul class="list-group">
+        <% for(var i=0; i<produits.length; i++) {
+          console.log(produits)
+          %> <li class='list-group-item'> <%= produits[i].nomproduit %>
+
+          </li>
+
+        <% }; %>
+
+      </ul>
+    </div>
+  </header>
+</body>
+
 </html>
