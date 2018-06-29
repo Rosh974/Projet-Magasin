@@ -56,15 +56,15 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 
-// Fonction pour afficher la liste des produits 
+  
+// Affiche 1 produit par son id
 
-app.get('/affiche_produits', function (req, res) {
-
-  mongoose.connect(url, function (err) {
-      if (err) { throw err; }
+produitController.index = function(req, res) {
+  Produit.findOne({_id:req.params.id}).exec(function(err, produit){
+      if(err){
+          console.log('Error : ', err);
+      }else{
+          res.render("../views/index",{produit:produit});
+      } 
   });
-  var db = mongoose.connection;
-  db.on('error', console.error.bind(console, 'Erreur lors de la connexion'));
-  db.once('open', function () {
-      console.log("Connexion à la base OK");
-  });
+};
