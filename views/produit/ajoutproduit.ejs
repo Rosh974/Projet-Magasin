@@ -10,13 +10,15 @@
 </head>
 <body>
     <div class="container">
-        <h3><a href="/index">Liste des produits</a></h3>
+        <h3><a href="/produits">Liste des produits</a></h3>
         <h1>Creation d'un produit</h1>
         <!-- TODO styler le form-->
 
-        <form action="/produit/save" method="POST">
-            <input type="text" name="nom" />
-            <input type="number" name="prix" />
+        <form action="/produits/save" method="POST">
+            <input type="text" name="nomproduit" placeholder="nom du produit" />
+            <input type="text" name="type" placeholder="type"/>
+            <input type="number" name="prix" placeholder="prix"/>
+            <input type="number" name="quantite" placeholder="quantite" />
             <input type="submit" value="enregistrer" />
         </form>
     </div>

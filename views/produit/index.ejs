@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Liste des Produits
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+       Liste des produits
+
+    </h1>
+    
+    <p><% produits.forEach(function(element) {%>
+        <%= element.nomproduit%>
+    <%})%>
+    <%= test%>
+    </p>
+
+    <a href="/produits/ajoutproduit">Ajout</a>
+
+
+    
+</body>
+
+</html>
