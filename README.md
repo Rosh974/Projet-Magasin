@@ -50,3 +50,12 @@ URI de connexion à la base : mongodb://localhost:27017/projetmagasin
 LE PORT SE TROUVE DANS LE DOSSIER BIN www
 
 { nom produit: "pain", type:"alimantaire" , quantité: "10", prix: "1" }
+
+
+
+Afficher la liste des produits :
+
+
+
+
+
