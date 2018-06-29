@@ -47,3 +47,4 @@ use projetmagasin
 - db.produit.find()
 
 URI de connexion à la base : mongodb://localhost:27017/projetmagasin
+LE PORT SE TROUVE DANS LE DOSSIER BIN www
