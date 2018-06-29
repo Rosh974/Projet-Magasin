@@ -1,0 +1,11 @@
+{
+  "name": "",
+  "version": "",
+  "description": "Création d'une application nommée \"Magasin\" en groupe de 3.",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.0",
+    "mongoose": "^5.1.7"
+  }
+}
