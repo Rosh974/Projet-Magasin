@@ -36,3 +36,6 @@ Répartition des tâches à accomplir :
 Créer la structure de dossier pour le projet :
 - execution de la commande suivante :' express projet-magasin --view=ejs'
 - ajout modul express, ejs, mongodb
+
+
+LE PORT SE TROUVE DANS LE DOSSIER BIN www
