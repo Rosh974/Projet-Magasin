@@ -14,10 +14,10 @@ router.get("/", produit.list);
 // router.get("/show/:id", produit.show);
 
 //cree un produit
-// router.get("/create", produit.create);
+router.get("/ajoutproduit", produit.create);
 
 //sauvegarder un produit. /!\ cest un POST 
-// router.post("/save", produit.save);
+router.post("/save", produit.save);
 
 //editer un produit
 // router.get("/edit/:id", produit.edit);
