@@ -48,7 +48,7 @@ produitController.save = function(req, res){
           res.render("../views/produit/ajoutproduit");
       } else{
           console.log("creation produit OK");
-          res.redirect("/produits" + produit._id );
+          res.redirect("/produits/ajoutproduit/" + produit._id );
       } 
   });
 };

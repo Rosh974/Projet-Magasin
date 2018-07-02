@@ -14,7 +14,7 @@ router.get("/", produit.list);
 // router.get("/show/:id", produit.show);
 
 //cree un produit
-router.get("/ajoutproduit", produit.create);
+router.get("/ajoutproduit/:id", produit.create);
 
 //sauvegarder un produit. /!\ cest un POST 
 router.post("/save", produit.save);
