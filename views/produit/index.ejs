@@ -47,6 +47,7 @@
                         <th scope="col">Type</th>
                         <th scope="col">Prix</th>
                         <th scope="col">Quantité</th>
+                        <th scope="col">A la une</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -65,6 +66,9 @@
                             </td>
                             <td>
                                 <%= element.quantite%>
+                            </td>
+                            <td>
+                                <%= element.une%>
                             </td>
                             <td>
                                 <!-- Bouton qui renvoit à la route produits/edit, qui renvoit à la fonction produitController.edit -->
