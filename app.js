@@ -32,7 +32,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-//routes produits (A MODIFIER)
+//routes produits
 var produits = require("./routes/produits");
 app.use("/produits", produits);
 
