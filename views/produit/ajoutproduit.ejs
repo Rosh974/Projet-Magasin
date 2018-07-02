@@ -13,21 +13,37 @@
 </head>
 
 <body>
+        <div class="bg-dark text-light text-center">
+                <h1 class="mx-auto py-5">Ajouter un produit</h1>
+            </div>
 
-    <div class="container">
-        <div class="row m-5">
-            <h1 class="pb-4">Ajouter un produit</h1>
+    <div class="container text-center">
+            <a class="btn btn-primary mx-auto my-5" href="/produits">Retour à la liste des produits</a>
 
-            <form class= "pb-4" action="/produits/save" method="POST">
+        <div class="row m-5 ">
+
+            <form class= "pb-4 mx-auto " action="/produits/save" method="POST">
                 <div class="form-group">
-                    <input type="text" name="nomproduit" placeholder="nom du produit" />
-                    <input type="text" name="type" placeholder="type" />
-                    <input type="number" name="prix" placeholder="prix" />
-                    <input type="number" name="quantite" placeholder="quantité" />
-                    <button type="submit" class="btn btn-secondary">Ajouter</button>
+                    <div class="col-sm-12 my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Non du produit:</label>
+                        <input class="col-sm-5" type="text" name="nomproduit" placeholder="nom du produit" />
+                    </div>
+                    <div class="col-sm-12 my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Type:</label>
+                        <input class="col-sm-5" type="text" name="type" placeholder="type" />
+                    </div>
+                    <div class="col-sm-12 my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Prix:</label>
+                        <input class="col-sm-5" type="number" name="prix" placeholder="prix" />
+                    </div>
+                    <div class="col-sm-12 my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Quantité:</label>
+                        <input class="col-sm-5" type="number" name="quantite" placeholder="quantité" />
+                    </div>
+                    <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
                 </div>
             </form>
-            <a href="/produits">Retour à la liste des produits</a>
+           
 
         </div>
     </div>

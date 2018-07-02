@@ -5,22 +5,50 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <title>Edition de legume</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
             <!-- TODO -->
             <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
         </head>
         <body>
-            <div class="container">
-                <h3><a href="/produits">Liste des légumes</a></h3>
-                <h1>Edition d'un légume</h1>
+                <div class="bg-dark text-light text-center">
+                    <h1 class="mx-auto py-5">Edition d'un légume</h1>
+                </div>
+        
+            <div class="container text-center">
+                <a class="btn btn-primary mx-auto my-5" href="/produits">Retour liste des légumes</a>
+               
                 <!-- TODO styler le form-->
         
-                <form action="/produits/update/<%= produit._id %>" method="POST">
-                    <input type="text" name="nom" value="<%= produit.nomproduit %>" />
-                    <input type="text" name="type" value="<%= produit.type %>" />
-                    <input type="number" name="prix" value="<%= produit.prix %>" />
-                    <input type="number" name="quantite" value="<%= produit.quantite %>" />
-                    <input type="submit" value="Mettre à jour" />
+                <form class="" action="/produits/update/<%= produit._id %>" method="POST">
+                    <div class="col-sm-12 my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Non du produit:</label>
+                        <input class="col-sm-5" type="text" name="nom" value="<%= produit.nomproduit %>" />
+                    </div>
+                    <div class="col-sm-12 my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Type:</label>
+                        <input class="col-sm-5" type="text" name="type" value="<%= produit.type %>" />
+                    </div>
+                    <div class="col-sm-12 my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Prix:</label>
+                        <input class="col-sm-5" type="number" name="prix" value="<%= produit.prix %>" />
+                    </div>
+                    <div class="col-sm-12 my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Quantité:</label>
+                        <input class="col-sm-5" type="number" name="quantite" value="<%= produit.quantite %>" />
+                    </div>
+                    <input class="btn btn-secondary" type="submit" value="Mettre à jour" />
                 </form>
             </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
         </body>
         </html>
