@@ -72,7 +72,7 @@ produitController.edit = function(req, res){
 produitController.update = function(req, res){
     console.log(req.params.id)
     console.log(req.body.prix)
-    Produit.findByIdAndUpdate(req.params.id,{ $set :{nomproduit: req.body.nom, prix: req.body.prix, type:req.body.type, quantite:req.body.quantite} },{new: true}, function (err, produit){
+    Produit.findByIdAndUpdate(req.params.id,{ $set :{nomproduit: req.body.nom, prix: req.body.prix, type:req.body.type, quantite:req.body.quantite, une: req.body.une} },{new: true}, function (err, produit){
 
         if (err){
             console.log(err);
