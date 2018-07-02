@@ -26,7 +26,7 @@ produitController.index = function(req, res) {
       if(err){
           console.log('Error : ', err);
       }else{
-          res.render("../views/index",{produit:produit});
+          res.render("../views/produit/modification",{produit:produit});
       } 
   });
 };
@@ -48,7 +48,7 @@ produitController.save = function(req, res){
           res.render("../views/produit/ajoutproduit");
       } else{
           console.log("creation produit OK");
-          res.redirect("/produits/ajoutproduit/" + produit._id );
+          res.redirect("/produits" );
       } 
   });
 };
@@ -56,8 +56,32 @@ produitController.save = function(req, res){
 
 //edition d'un produit par son id
 
+produitController.edit = function(req, res){
+    var produit = new Produit(req.body);
 
+    Produit.findOne({_id:req.params.id}).exec(function(err, produit){
+        if(err){
+            console.log("Error ", err);
+        } else{
+            res.render("../views/produit/modification",{produit: produit} );
+        } 
+    });
+};
 
+//gestion de l'edition dun legume
+produitController.update = function(req, res){
+    console.log(req.params.id)
+    console.log(req.body.prix)
+    Produit.findByIdAndUpdate(req.params.id,{ $set :{nomproduit: req.body.nom, prix: req.body.prix, type:req.body.type, quantite:req.body.quantite} },{new: true}, function (err, produit){
+
+        if (err){
+            console.log(err);
+            res.render("../views/produit/modification",{produit:req.body} );
+        } 
+        res.redirect("/produits");
+        
+    });
+};
 
 //export du module
 module.exports = produitController;
