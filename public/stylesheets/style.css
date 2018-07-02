@@ -7,11 +7,9 @@ a {
   color: #00B7FF;
 }
 
+.prod{
 
-.back{
 
-  background-image:url(../img/food.jpg);
-  background-repeat:no-repeat;
-  background-position:center center;
-  margin-bottom: 70rem;
+margin-top: 150px;
+
 }
