@@ -51,5 +51,11 @@ LE PORT SE TROUVE DANS LE DOSSIER BIN www
 
 { nom produit: "pain", type:"alimantaire" , quantité: "10", prix: "1" }
 
-# Fiches
+
+
+Afficher la liste des produits :
+
+
+
+
 
