@@ -21,15 +21,15 @@ produitController.list = function(req, res) {
 
 // Affiche 1 produit par son id
 
-produitController.index = function(req, res) {
-  Produit.findOne({_id:req.params.id}).exec(function(err, produit){
-      if(err){
-          console.log('Error : ', err);
-      }else{
-          res.render("../views/produit/modification",{produit:produit});
-      } 
-  });
-};
+// produitController.index = function(req, res) {
+//   Produit.findOne({_id:req.params.id}).exec(function(err, produit){
+//       if(err){
+//           console.log('Error : ', err);
+//       }else{
+//           res.render("../views/produit/modification",{produit:produit});
+//       } 
+//   });
+// };
 
 
 //redirection à la page de creation de produit

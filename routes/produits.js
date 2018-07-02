@@ -10,9 +10,6 @@ var produit = require("../controllers/produitsControllers");
 //recuperer les produits
 router.get("/", produit.list);
 
-// voir un produit par son id
-// router.get("/show/:id", produit.show);
-
 //cree un produit
 router.get("/ajoutproduit", produit.create);
 
