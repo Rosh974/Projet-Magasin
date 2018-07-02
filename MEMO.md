@@ -117,6 +117,6 @@ produitController.list = function(req, res) {
 module.exports = produitController;
 ```
 
-#DANS LE DOSSIER VIEWS
+# DANS LE DOSSIER VIEWS
 
 Appeler les données de la base de données
