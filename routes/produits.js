@@ -10,20 +10,20 @@ var produit = require("../controllers/produitsControllers");
 //recuperer les produits
 router.get("/", produit.list);
 
-//voir un produit par son id
+// voir un produit par son id
 // router.get("/show/:id", produit.show);
 
 //cree un produit
-router.get("/ajoutproduit/:id", produit.create);
+router.get("/ajoutproduit", produit.create);
 
 //sauvegarder un produit. /!\ cest un POST 
 router.post("/save", produit.save);
 
-//editer un produit
-// router.get("/edit/:id", produit.edit);
+// editer un produit
+router.get("/edit/:id", produit.edit);
 
-//edit update.  /!\ cest un POST 
-// router.post("/update/:id", produit.update);
+// edit update.  /!\ cest un POST 
+router.post("/update/:id", produit.update);
 
 
 //export du module router
