@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>Edition de legume</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- TODO -->
+            <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+        </head>
+        <body>
+            <div class="container">
+                <h3><a href="/produits">Liste des légumes</a></h3>
+                <h1>Edition d'un légume</h1>
+                <!-- TODO styler le form-->
+        
+                <form action="/produits/update/<%= produit._id %>" method="POST">
+                    <input type="text" name="nom" value="<%= produit.nomproduit %>" />
+                    <input type="text" name="type" value="<%= produit.type %>" />
+                    <input type="number" name="prix" value="<%= produit.prix %>" />
+                    <input type="number" name="quantite" value="<%= produit.quantite %>" />
+                    <input type="submit" value="Mettre à jour" />
+                </form>
+            </div>
+        </body>
+        </html>
