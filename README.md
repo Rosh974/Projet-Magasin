@@ -51,6 +51,8 @@ LE PORT SE TROUVE DANS LE DOSSIER BIN www
 
 { nom produit: "pain", type:"alimantaire" , quantité: "10", prix: "1" }
 
+Commande pour afficher toute les collection dans la base de donnée:
+- db.getCollectionNames()
 
 
 Afficher la liste des produits :

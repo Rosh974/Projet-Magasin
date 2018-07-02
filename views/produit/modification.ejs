@@ -1,54 +1,76 @@
 <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <title>Edition de legume</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edition de produit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-            <!-- TODO -->
-            <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
-        </head>
-        <body>
-                <div class="bg-dark text-light text-center">
-                    <h1 class="mx-auto py-5">Edition d'un légume</h1>
+    <!-- TODO -->
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-light text-center">
+        <h1 class="mx-auto mb-0 p-5">Edition d'un produit</h1>
+    </div>
+
+    <div class="row mx-0">
+        <div class="bg-dark col-sm-2 pt-5">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/produits">Liste des produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="/">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="/produits/ajoutproduit">Ajouter un produit</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-8 col-md-10 col-sm-12 text-center">
+
+            <a class="btn btn-primary mx-auto my-5" href="/produits">Retour liste des produits</a>
+
+            <form class="" action="/produits/update/<%= produit._id %>" method="POST">
+                <div class="col-sm-12 my-3">
+                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Nom du produit:</label>
+                    <input class="col-sm-5" type="text" name="nom" value="<%= produit.nomproduit %>" />
                 </div>
-        
-            <div class="container text-center">
-                <a class="btn btn-primary mx-auto my-5" href="/produits">Retour liste des légumes</a>
-               
-                <!-- TODO styler le form-->
-        
-                <form class="" action="/produits/update/<%= produit._id %>" method="POST">
-                    <div class="col-sm-12 my-3">
-                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Non du produit:</label>
-                        <input class="col-sm-5" type="text" name="nom" value="<%= produit.nomproduit %>" />
-                    </div>
-                    <div class="col-sm-12 my-3">
-                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Type:</label>
-                        <input class="col-sm-5" type="text" name="type" value="<%= produit.type %>" />
-                    </div>
-                    <div class="col-sm-12 my-3">
-                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Prix:</label>
-                        <input class="col-sm-5" type="number" name="prix" value="<%= produit.prix %>" />
-                    </div>
-                    <div class="col-sm-12 my-3">
-                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Quantité:</label>
-                        <input class="col-sm-5" type="number" name="quantite" value="<%= produit.quantite %>" />
-                    </div>
-                    <input class="btn btn-secondary" type="submit" value="Mettre à jour" />
-                </form>
-            </div>
+                <div class="col-sm-12 my-3">
+                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Type:</label>
+                    <input class="col-sm-5" type="text" name="type" value="<%= produit.type %>" />
+                </div>
+                <div class="col-sm-12 my-3">
+                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Prix:</label>
+                    <input class="col-sm-5" type="number" name="prix" value="<%= produit.prix %>" />
+                </div>
+                <div class="col-sm-12 my-3">
+                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Quantité:</label>
+                    <input class="col-sm-5" type="number" name="quantite" value="<%= produit.quantite %>" />
+                </div>
+                <div class="col-sm-12 my-3">
+                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">A la une:</label>
+                    <input class="col-sm-5" type="checkbox" name="quantite" value="<%= produit.une %>" />
+                </div>
+                <input class="btn btn-secondary" type="submit" value="Mettre à jour" />
+            </form>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-        </body>
-        </html>
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
