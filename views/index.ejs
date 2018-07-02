@@ -21,39 +21,42 @@
 
 <body class="back">
 
-  <nav class="navbar navbar-light bg-light justify-content-center">
-    <a class="navbar-brand" href="#">BARAK 974</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="container">
+
+    <div class="row justify-content-center text-center">
+
+      <nav class="navbar navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="#">BARAK 974</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Nos produits locaux
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Fruits</a>
+                <a class="dropdown-item" href="#">Légumes</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Bovines & Poissons</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">À propos de nous</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Nos produits locaux
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Fruits</a>
-            <a class="dropdown-item" href="#">Légumes</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Bovines & Poissons</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">À propos de nous</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-      </form>
     </div>
-  </nav>
+  </div>
+
 
   <div class="container">
     <div class="row justify-content-center mt-5">
@@ -80,14 +83,19 @@
 
 
 
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <h1>
+        <%= title %>
+      </h1>
+      <p>Welcome to
+        <%= title %>
+      </p>
+      <a href="/produits">--> Liste</a>
 
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcome to
-    <%= title %>
-  </p>
-  <a href="/produits">Liste</a>
+    </div>
+  </div>
+
 
 
 
