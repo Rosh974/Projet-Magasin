@@ -22,6 +22,8 @@ router.get("/edit/:id", produit.edit);
 // edit update.  /!\ cest un POST 
 router.post("/update/:id", produit.update);
 
+// supprimer un produit
+router.get("/remove/:id", produit.remove);
 
 //export du module router
 module.exports = router;
