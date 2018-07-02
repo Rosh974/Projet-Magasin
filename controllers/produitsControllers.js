@@ -12,7 +12,7 @@ produitController.list = function(req, res) {
           console.log('Error : ', err);
       }else{
           console.log("->",produit);
-          res.render("../views/produit/index",{produits:produit, test:"toto"} );
+          res.render("../views/produit/index",{produits:produit} );
       } 
   });
 };
