@@ -21,15 +21,15 @@ produitController.list = function(req, res) {
 
 // Affiche 1 produit par son id
 
-// produitController.index = function(req, res) {
-//   Produit.findOne({_id:req.params.id}).exec(function(err, produit){
-//       if(err){
-//           console.log('Error : ', err);
-//       }else{
-//           res.render("../views/index",{produit:produit});
-//       } 
-//   });
-// };
+produitController.index = function(req, res) {
+  Produit.findOne({_id:req.params.id}).exec(function(err, produit){
+      if(err){
+          console.log('Error : ', err);
+      }else{
+          res.render("../views/index",{produit:produit});
+      } 
+  });
+};
 
 
 //redirection à la page de creation de produit
@@ -48,7 +48,7 @@ produitController.save = function(req, res){
           res.render("../views/produit/ajoutproduit");
       } else{
           console.log("creation produit OK");
-          res.redirect("/produits" + produit._id );
+          res.redirect("/produits/ajoutproduit/" + produit._id );
       } 
   });
 };
