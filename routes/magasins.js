@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-var magasin = require("../controllers/produitsControllers");
+var magasin = require("../controllers/magasinControllers");
 
 //recuperer les produits
 router.get("/", magasin.listMagasin);
