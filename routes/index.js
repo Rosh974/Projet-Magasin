@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+// lien vers produitcontroller pour afficher la liste des produit dans index
+var produit = require("../controllers/produitsControllers");
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Magasin' });
-});
+router.get('/', produit.list2, produit.listMagasin);
 
 module.exports = router;

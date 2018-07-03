@@ -2,6 +2,41 @@ var mongoose = require('mongoose');
 
 var produitController = {};
 var Produit = require ("../models/Produit"); 
+var Magasin = require ("../models/Magasin");
+
+// Liste les magasins
+
+produitController.listMagasin = function(req, res) {
+    Magasin.find({}).exec(function(err, magasin){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            console.log("->",magasin);
+            res.render("../views/magasin/indexmagasin",{magasin:magasin} );
+        } 
+    });
+  };
+
+//   créer un magasin
+  produitController.createMagasin = function(req, res){
+    res.render("../views/magasin/ajoutmagasin");
+  }; 
+  
+  //enregistrement des magasins
+  
+  produitController.saveMagasin = function(req, res){
+    var produit = new Magasin(req.body);
+     
+    produit.save(function(err){
+        if(err){
+            console.log(err);
+            res.render("../views/magasin/ajoutmagasin");
+        } else{
+            console.log("creation produit OK");
+            res.redirect("/" );
+        } 
+    });
+  };
 
 
 // Liste les produits
@@ -13,23 +48,35 @@ produitController.list = function(req, res) {
       }else{
           //console.log("->",produit);
           res.render("../views/produit/index",{produits:produit} );
+
       } 
   });
 };
 
+produitController.list2 = function(req, res) {
+    Produit.find({}).exec(function(err, produit){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            //console.log("->",produit);
+            res.render("../views/index",{produits:produit, title: 'Magasin' } )
+  
+        } 
+    });
+  };
 
 
 // Affiche 1 produit par son id
 
-// produitController.index = function(req, res) {
-//   Produit.findOne({_id:req.params.id}).exec(function(err, produit){
-//       if(err){
-//           console.log('Error : ', err);
-//       }else{
-//           res.render("../views/produit/modification",{produit:produit});
-//       } 
-//   });
-// };
+produitController.index = function(req, res) {
+  Produit.findOne({_id:req.params.id}).exec(function(err, produit){
+      if(err){
+          console.log('Error : ', err);
+      }else{
+          res.render("../views/produit/modification",{produit:produit});
+      } 
+  });
+};
 
 
 //redirection à la page de creation de produit
