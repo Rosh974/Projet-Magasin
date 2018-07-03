@@ -76,7 +76,14 @@ produitController.edit = function(req, res){
 
 //gestion de l'edition dun produit
 produitController.update = function(req, res){
-
+    console.log(req.params.id)
+    console.log(req.body.prix)
+    if (req.body.une == undefined){
+        req.body.une = false;
+    }else{
+        req.body.une = true;
+    }
+    ;
     Produit.findByIdAndUpdate(req.params.id,{ $set :{nomproduit: req.body.nom, prix: req.body.prix, type:req.body.type, quantite:req.body.quantite, une: req.body.une} },{new: true}, function (err, produit){
 
         if (err){
