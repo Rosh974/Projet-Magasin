@@ -15,29 +15,55 @@
 
 <body>
     <div class="container-fluid bg-dark text-light text-center">
-        <h1 class="mx-auto mb-0 p-5">Ajouter un magasin</h1>
+        <h1 class="mx-auto mb-0 p-5">Ajout vente</h1>
     </div>
 
     <div class="row mx-0">
 
         <div class="bg-dark col-sm-2 pt-5">
             <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/produits">Liste des produits</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/">Accueil</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="/produits/ajoutproduit">Ajouter un produit</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Produits
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown ">
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/produits">Liste des produits</a>
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/produits/ajoutproduit">Ajouter un produit</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Magasins
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/magasins">Liste des magasins</a>
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/magasins/ajoutmagasin">Ajouter un magasin</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Ventes
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/vends">Liste des ventes</a>
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/vends/ajout">Ajouter une vente</a>
+                    </div>
                 </li>
             </ul>
         </div>
 
         <div class="col-lg-8 col-md-10 col-sm-12 text-center">
-            <a class="btn btn-primary mx-auto my-5" href="/produits">Retour à la liste des produits</a>
+            <a class="btn btn-primary mx-auto my-5" href="/vends">Retour à la liste des ventes</a>
 
-                <form class="pb-4 mx-auto " action="/vend/save" method="POST">
+                <form class="pb-4 mx-auto " action="/vends/save" method="POST">
                     <div class="form-group">
                         <div class=" my-3">
                             <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">id produit:</label>
