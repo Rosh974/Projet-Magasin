@@ -21,14 +21,30 @@
 
         <div class="bg-dark col-sm-2 pt-5">
             <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/produits">Liste des produits</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/">Accueil</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="/produits/ajoutproduit">Ajouter un produit</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Produits
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown ">
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/produits">Liste des produits</a>
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/produits/ajoutproduit">Ajouter un produit</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Magasins
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/magasins">Liste des magasins</a>
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/magasins/ajoutmagasin">Ajouter un magasin</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -36,31 +52,31 @@
         <div class="col-lg-8 col-md-10 col-sm-12 text-center">
             <a class="btn btn-primary mx-auto my-5" href="/produits">Retour à la liste des produits</a>
 
-                <form class="pb-4 mx-auto " action="/produits/save" method="POST">
-                    <div class="form-group">
-                        <div class=" my-3">
-                            <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Nom du produit:</label>
-                            <input class="col-sm-5" type="text" name="nomproduit" placeholder="nom du produit" />
-                        </div>
-                        <div class=" my-3">
-                            <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Type:</label>
-                            <input class="col-sm-5" type="text" name="type" placeholder="type" />
-                        </div>
-                        <div class=" my-3">
-                            <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Prix:</label>
-                            <input class="col-sm-5" type="number" name="prix" placeholder="1.00" step="0.01" min="0" max="100" />
-                        </div>
-                        <div class=" my-3">
-                            <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Quantité:</label>
-                            <input class="col-sm-5" type="number" name="quantite" placeholder="quantité" />
-                        </div>
-                        <div class=" my-3">
-                                <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">A la Une:</label>
-                                <input class="col-sm-5" type="checkbox" name="une" />
-                            </div>
-                        <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
+            <form class="pb-4 mx-auto " action="/produits/save" method="POST">
+                <div class="form-group">
+                    <div class=" my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Nom du produit:</label>
+                        <input class="col-sm-5" type="text" name="nomproduit" placeholder="nom du produit" />
                     </div>
-                </form>
+                    <div class=" my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Type:</label>
+                        <input class="col-sm-5" type="text" name="type" placeholder="type" />
+                    </div>
+                    <div class=" my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Prix:</label>
+                        <input class="col-sm-5" type="number" name="prix" placeholder="1.00" step="0.01" min="0" max="100" />
+                    </div>
+                    <div class=" my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Quantité:</label>
+                        <input class="col-sm-5" type="number" name="quantite" placeholder="quantité" />
+                    </div>
+                    <div class=" my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">A la Une:</label>
+                        <input class="col-sm-5" type="checkbox" name="une" />
+                    </div>
+                    <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
+                </div>
+            </form>
 
         </div>
 

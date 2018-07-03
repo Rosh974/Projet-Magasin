@@ -93,13 +93,15 @@
                                 <a href="/produits/edit/<%=element._id %>" role="button">
                                     <i class="fas fa-edit"></i>
                                 </a>
+                                <a type="button" class="btn btn-light bg-transparent" href="/produits/remove/<%=element._id %>"> <i class="text-danger fas fa-trash-alt"></i> </a>
 
-                                <a type="button" class="btn btn-light bg-transparent" data-toggle="modal" data-target="#confirmModal">
+
+                                <!-- <a type="button" class="btn btn-light bg-transparent" data-toggle="modal" data-target="#confirmModal">
                                     <i class="text-danger fas fa-trash-alt"></i>
-                                </a>
+                                </a> -->
 
                                 <!-- Modal qui permet de confirmer la suppression -->
-                                <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                <!-- <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -117,7 +119,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </td>
                         </tr>
                         <%})%>
