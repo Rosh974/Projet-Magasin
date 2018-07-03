@@ -23,7 +23,7 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
+    <div class="container p-2">
       <a class="navbar-brand" href="#">Fast & Good</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -36,12 +36,27 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/produits">Liste des produits</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Produits
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item pb-2 pt-2" href="/produits">Liste des produits</a>
+              <a class="dropdown-item pb-2 pt-2" href="/produits/ajoutproduit">Ajouter un produit</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/produits/ajoutproduit">Ajouter un produit</a>
-          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Magasins
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item pb-2 pt-2" href="/magasins">Liste des magasins</a>
+                <a class="dropdown-item pb-2 pt-2" href="/magasins/ajoutmagasin">Ajouter un magasin</a>
+              </div>
+            </li>
+
         </ul>
       </div>
     </div>
@@ -63,8 +78,8 @@
 
         <h1 class="my-4">Nos magasins</h1>
         <div class="list-group">
-            <a href="/magasins" class="list-group-item">Liste des magasins</a>
-            <a href="/magasins/ajoutmagasin" class="list-group-item">Ajouter un magasin</a>
+          <a href="/magasins" class="list-group-item">Liste des magasins</a>
+          <a href="/magasins/ajoutmagasin" class="list-group-item">Ajouter un magasin</a>
         </div>
 
       </div>
@@ -109,7 +124,7 @@
                   <a href="#">
                     <% if (element.type == "dessert"){%>
                       <img class="card-img-top" src="img/food7.jpg" alt="">
-                      
+
                       <%}%>
                         <% if (element.type == "alimentaire"){%>
                           <img class="card-img-top" src="img/food4.jpg" alt="">
@@ -127,9 +142,9 @@
 
                     </h4>
                     <h5>
-                      
+
                       <%= element.prix%>
-                      <span> €</span>
+                        <span> €</span>
                     </h5>
                   </div>
                   <!-- <div class="card-footer">
