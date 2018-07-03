@@ -45,7 +45,7 @@ produitController.index = function(req, res) {
 
 //redirection à la page de creation de produit
 produitController.create = function(req, res){
-  res.render("../views/produit/ajoutproduit");
+  res.render("../views/produit/ajout");
 }; 
 
 //enregistrement des produits
@@ -62,7 +62,7 @@ produitController.save = function(req, res){
   produit.save(function(err){
       if(err){
           console.log(err);
-          res.render("../views/produit/ajoutproduit");
+          res.render("../views/produit/ajout");
       } else{
           console.log("creation produit OK");
           res.redirect("/produits" );

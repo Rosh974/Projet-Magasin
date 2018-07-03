@@ -40,6 +40,9 @@ app.use("/produits", produits);
 var magasins = require("./routes/magasins");
 app.use("/magasins", magasins);
 
+//routes vend
+var vends = require("./routes/vends");
+app.use("/vends", vends);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
