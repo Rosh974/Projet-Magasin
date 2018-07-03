@@ -31,7 +31,7 @@ magasinController.list = function(req, res) {
             res.render("../views/magasin/ajout");
         } else{
             console.log("creation produit OK");
-            res.redirect("/" );
+            res.redirect("/magasins" );
         } 
     });
   };

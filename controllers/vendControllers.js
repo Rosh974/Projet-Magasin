@@ -21,7 +21,7 @@ vendController.save = function(req, res){
           res.render("../views/vend/ajout");
       } else{
           console.log("creation vente OK");
-          res.redirect("/" );
+          res.redirect("/vends" );
       } 
   });
 };
