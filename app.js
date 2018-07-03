@@ -36,6 +36,10 @@ app.use('/users', usersRouter);
 var produits = require("./routes/produits");
 app.use("/produits", produits);
 
+//routes magasins
+var magasins = require("./routes/magasins");
+app.use("/magasins", magasins);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

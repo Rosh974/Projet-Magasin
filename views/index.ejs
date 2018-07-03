@@ -61,6 +61,12 @@
           <a href="/produits/ajoutproduit" class="list-group-item">Ajouter un produit</a>
         </div>
 
+        <h1 class="my-4">Nos magasins</h1>
+        <div class="list-group">
+            <a href="/magasins" class="list-group-item">Liste des magasins</a>
+            <a href="/magasins/ajoutmagasin" class="list-group-item">Ajouter un magasin</a>
+        </div>
+
       </div>
       <!-- /.col-lg-3 -->
 
@@ -103,6 +109,7 @@
                   <a href="#">
                     <% if (element.type == "dessert"){%>
                       <img class="card-img-top" src="img/food7.jpg" alt="">
+                      
                       <%}%>
                         <% if (element.type == "alimentaire"){%>
                           <img class="card-img-top" src="img/food4.jpg" alt="">
@@ -120,16 +127,14 @@
 
                     </h4>
                     <h5>
-                      <span>prix €</span>
-                      <%= element.prix%>
                       
+                      <%= element.prix%>
+                      <span> €</span>
                     </h5>
-
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                   </div>
-                  <div class="card-footer">
+                  <!-- <div class="card-footer">
                     <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               <%};

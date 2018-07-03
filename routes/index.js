@@ -5,6 +5,6 @@ var router = express.Router();
 var produit = require("../controllers/produitsControllers");
 
 /* GET home page. */
-router.get('/', produit.list2);
+router.get('/', produit.list2, produit.listMagasin);
 
 module.exports = router;

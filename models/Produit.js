@@ -8,4 +8,6 @@ var ProduitSchema = new mongoose.Schema({
     une: Boolean
 });
 
+
+
 module.exports = mongoose.model("produit", ProduitSchema);
