@@ -25,11 +25,11 @@
     <div class="row mx-0">
         <div class="bg-dark col-sm-2 pt-5">
             <ul class="nav flex-column">
-                
+
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/">Accueil</a>
                 </li>
-                               
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
@@ -48,6 +48,16 @@
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item text-light pb-2 pt-2" href="/magasins">Liste des magasins</a>
                         <a class="dropdown-item text-light pb-2 pt-2" href="/magasins/ajoutmagasin">Ajouter un magasin</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Ventes
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/vends">Liste des ventes</a>
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/vends/ajout">Ajouter une vente</a>
                     </div>
                 </li>
             </ul>
@@ -93,13 +103,17 @@
                                 <a href="/produits/edit/<%=element._id %>" role="button">
                                     <i class="fas fa-edit"></i>
                                 </a>
-
-                                <a type="button" class="btn btn-light bg-transparent" data-toggle="modal" data-target="#confirmModal">
+                                <a type="button" class="btn btn-light bg-transparent" href="/produits/remove/<%=element._id %>">
                                     <i class="text-danger fas fa-trash-alt"></i>
                                 </a>
 
+
+                                <!-- <a type="button" class="btn btn-light bg-transparent" data-toggle="modal" data-target="#confirmModal">
+                                    <i class="text-danger fas fa-trash-alt"></i>
+                                </a> -->
+
                                 <!-- Modal qui permet de confirmer la suppression -->
-                                <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                <!-- <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -117,7 +131,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </td>
                         </tr>
                         <%})%>
