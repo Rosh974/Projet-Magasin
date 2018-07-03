@@ -95,252 +95,56 @@
 
         <div class="row mt-5">
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food4.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Wrappy
-                </h4>
-                <h5>$5.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
+          <!-- boucle pour afficher les produit qui sont a la une -->
+          <% produits.forEach(function(element) {%>
+            <% if (element.une == true){%>
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                  <a href="#">
+                    <% if (element.type == "dessert"){%>
+                      <img class="card-img-top" src="img/food7.jpg" alt="">
+                      <%}%>
+                        <% if (element.type == "alimentaire"){%>
+                          <img class="card-img-top" src="img/food4.jpg" alt="">
+                          <%}%>
+                            <% if (element.type == "boisson"){%>
+                              <img class="card-img-top" src="img/juice.jpg" alt="">
+                              <%}%>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food5.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Vege Soft Bread
-                </h4>
-                <h5>$4.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit
-                  amet.
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
-              </div>
-            </div>
-          </div>
+                  </a>
+                  <div class="card-body">
+                    <h4 class="card-title">
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food6.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Beef Toasts
-                </h4>
-                <h5>$6.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food7.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Donuts
-                </h4>
-                <h5>$7.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-              </div>
-            </div>
-          </div>
+                      <%= element.nomproduit%>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food8.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Spicy Chicken
-                </h4>
-                <h5>$12.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit
-                  amet.
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
+                    </h4>
+                    <h5>
+                      <span>prix €</span>
+                      <%= element.prix%>
+                      
+                    </h5>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food9.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Pastadino
-                </h4>
-                <h5>$10.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  </div>
+                </div>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food11.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Chocolate Dumpling
-                </h4>
-                <h5>$10.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food12.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Special Coffee
-                </h4>
-                <h5>$10.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food13.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                 Chicken Nuggets
-                </h4>
-                <h5>$10.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food14.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                 Samoussas Dakatine
-                </h4>
-                <h5>$10.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food15.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Chef's Pizza
-                </h4>
-                <h5>$10.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#">
-                <img class="card-img-top" src="img/food16.jpg" alt="">
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  Molten Toast
-                </h4>
-                <h5>$10.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
+              <%};
+            })%>
         </div>
-        <!-- /.row -->
-
       </div>
-      <!-- /.col-lg-9 -->
-
     </div>
-    <!-- /.row -->
-
   </div>
-  <!-- /.container -->
-
-
-
   <!-- Footer -->
   <footer class="py-5 bg-dark cop">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Fast & Good - 2018</p>
-    </div>
-    <!-- /.container -->
+
+    <p class="m-0 text-center text-white">Copyright &copy; Fast & Good - 2018</p>
+
+
   </footer>
-
-
-
-
-
 
 
   <!-- Optional JavaScript -->

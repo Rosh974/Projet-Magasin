@@ -13,10 +13,22 @@ produitController.list = function(req, res) {
       }else{
           //console.log("->",produit);
           res.render("../views/produit/index",{produits:produit} );
+
       } 
   });
 };
 
+produitController.list2 = function(req, res) {
+    Produit.find({}).exec(function(err, produit){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            //console.log("->",produit);
+            res.render("../views/index",{produits:produit, title: 'Magasin' } )
+  
+        } 
+    });
+  };
 
 
 // Affiche 1 produit par son id
