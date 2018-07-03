@@ -1,5 +1,6 @@
 var Magasin = require ("../models/Magasin");
 var Produit = require ("../models/Produit");
+var Vend = require ("../models/vend");
 var mongoose = require('mongoose');
 
 var vendController = {};
@@ -27,12 +28,15 @@ vendController.save = function(req, res){
 
 // liste vente
 vendController.list = function(req, res) {
-    Produit.find({}).exec(function(err, produit){
+    Vend.find({})
+    .populate("id_produit")
+    .populate("id_magasin")
+    .exec(function(err, vend){
         if(err){
             console.log('Error : ', err);
         }else{
-            //console.log("->",produit);
-            res.render("../views/vend/index",{produits:produit} );
+            console.log("->",vend);
+            res.render("../views/vend/index",{vend:vend} );
   
         } 
     });
