@@ -2,42 +2,6 @@ var mongoose = require('mongoose');
 
 var produitController = {};
 var Produit = require ("../models/Produit"); 
-var Magasin = require ("../models/Magasin");
-
-// Liste les magasins
-
-produitController.listMagasin = function(req, res) {
-    Magasin.find({}).exec(function(err, magasin){
-        if(err){
-            console.log('Error : ', err);
-        }else{
-            console.log("->",magasin);
-            res.render("../views/magasin/indexmagasin",{magasin:magasin} );
-        } 
-    });
-  };
-
-//   créer un magasin
-  produitController.createMagasin = function(req, res){
-    res.render("../views/magasin/ajoutmagasin");
-  }; 
-  
-  //enregistrement des magasins
-  
-  produitController.saveMagasin = function(req, res){
-    var produit = new Magasin(req.body);
-     
-    produit.save(function(err){
-        if(err){
-            console.log(err);
-            res.render("../views/magasin/ajoutmagasin");
-        } else{
-            console.log("creation produit OK");
-            res.redirect("/" );
-        } 
-    });
-  };
-
 
 // Liste les produits
 
@@ -81,7 +45,7 @@ produitController.index = function(req, res) {
 
 //redirection à la page de creation de produit
 produitController.create = function(req, res){
-  res.render("../views/produit/ajoutproduit");
+  res.render("../views/produit/ajout");
 }; 
 
 //enregistrement des produits
@@ -98,7 +62,7 @@ produitController.save = function(req, res){
   produit.save(function(err){
       if(err){
           console.log(err);
-          res.render("../views/produit/ajoutproduit");
+          res.render("../views/produit/ajout");
       } else{
           console.log("creation produit OK");
           res.redirect("/produits" );
@@ -145,6 +109,7 @@ produitController.update = function(req, res){
 
 //suppression d'un produit
 produitController.remove = function(req, res){
+    console.log("produitController",req.params.id)
     Produit.findByIdAndRemove(req.params.id, function (err, produit){
 
         if (err){
