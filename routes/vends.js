@@ -2,16 +2,16 @@ var express = require('express');
 var router = express.Router();
 
 
-var magasin = require("../controllers/magasinControllers");
+var vends= require("../controllers/vendControllers");
 
 //recuperer les produits
-router.get("/", magasin.list);
+router.get("/", vends.list);
 
 //cree un magasin
-router.get("/ajoutmagasin", magasin.create);
+router.get("/ajout", vends.create);
 
 //sauvegarder un produit. /!\ cest un POST 
-router.post("/save", magasin.save);
+router.post("/save", vends.save);
 
 
 //export du module router
