@@ -73,6 +73,7 @@
                     <tr> 
                         <th scope="col">nom produit</th>
                         <th scope="col">enseigne</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -84,6 +85,15 @@
                             </td>
                             <td>
                                 <%= element.id_magasin[0].enseigne%>
+                            </td>
+                            <td>
+                                <!-- Bouton qui renvoit à la route produits/edit, qui renvoit à la fonction produitController.edit -->
+                                <a href="/vends/edit/<%=element._id %>" role="button">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a type="button" class="btn btn-light bg-transparent" href="/vends/remove/<%=element._id %>">
+                                    <i class="text-danger fas fa-trash-alt"></i>
+                                </a>
                             </td>
 
                         </tr>

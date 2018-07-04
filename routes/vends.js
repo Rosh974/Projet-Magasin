@@ -13,14 +13,14 @@ router.get("/ajout", vends.create);
 //sauvegarder une vente. /!\ cest un POST 
 router.post("/save", vends.save);
 
-// editer un produit
-// router.get("/edit/:id", vends.edit);
+// editer une vente
+router.get("/edit/:id", vends.edit);
 
 // edit update.  /!\ cest un POST 
-// router.post("/update/:id", vends.update);
+router.post("/update/:id", vends.update);
 
-// supprimer un produit
-// router.get("/remove/:id", vends.remove);
+// supprimer une vente
+router.get("/remove/:id", vends.remove);
 
 //export du module router
 module.exports = router;
