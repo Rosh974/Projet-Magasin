@@ -13,6 +13,14 @@ router.get("/ajoutmagasin", magasin.create);
 //sauvegarder un magasin. /!\ cest un POST 
 router.post("/save", magasin.save);
 
+// editer un magasin
+router.get("/edit/:id", magasin.edit);
+
+// edit update.  /!\ cest un POST 
+router.post("/update/:id", magasin.update);
+
+// supprimer un magasin
+router.get("/remove/:id", magasin.remove);
 
 //export du module router
 module.exports = router;
