@@ -123,7 +123,7 @@ Appeler les données de la base de données
 
 
 
-
+// FAIRE LA JOINTURE ENTRE 2 COLLECTIONS
 
 Schema pour faire le  lien entre deux collections
 
@@ -133,6 +133,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var vendSchema = new mongoose.Schema({
+    //recupere les id des collection produit et magasin
     id_produit:[{ type: Schema.Types.ObjectId, ref: 'produit' }],
     id_magasin: [{ type: Schema.Types.ObjectId, ref: 'magasin' }]
 });
