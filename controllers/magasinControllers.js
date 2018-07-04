@@ -37,5 +37,53 @@ magasinController.list = function(req, res) {
   };
 
 
+
+//edition d'un produit par son id
+
+magasinController.edit = function(req, res){
+    var magasin = new Magasin(req.body);
+
+    Magasin.findOne({_id:req.params.id}).exec(function(err, magasin){
+        if(err){
+            console.log("Error ", err);
+        } else{
+            res.render("../views/magasin/edit",{magasin: magasin} );
+        } 
+    });
+};
+
+//gestion de l'edition dun produit
+magasinController.update = function(req, res){
+   
+    Magasin.findByIdAndUpdate(req.params.id,{ $set :{enseigne: req.body.enseigne, adresse: req.body.adresse} },{new: true}, function (err, produit){
+
+        if (err){
+            console.log(err);
+            res.render("../views/magasin/edit",{magasin:req.body} );
+        } 
+        res.redirect("/magasins");
+        
+    });
+};
+
+//suppression d'un magasin
+magasinController.remove = function(req, res){
+    console.log("produitController",req.params.id)
+    Magasin.findByIdAndRemove(req.params.id, function (err, magasin){
+
+        if (err){
+            console.log(err);
+            
+        } 
+        res.redirect("/magasins");
+        
+    });
+};
+
+
+
+
+
+
   //export du module
 module.exports = magasinController;
