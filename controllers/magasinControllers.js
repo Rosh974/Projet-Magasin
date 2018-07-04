@@ -2,8 +2,8 @@ var Magasin = require ("../models/Magasin");
 var mongoose = require('mongoose');
 
 var magasinController = {};
-// Liste les magasins
 
+// Lister les magasins
 magasinController.list = function(req, res) {
     Magasin.find({}).exec(function(err, magasin){
         if(err){
@@ -15,12 +15,12 @@ magasinController.list = function(req, res) {
     });
   };
 
-//   créer un magasin
+// Créer un magasin
   magasinController.create = function(req, res){
     res.render("../views/magasin/ajout");
   }; 
   
-  //enregistrement des magasins
+// Enregistrer le magasin créé
   
   magasinController.save = function(req, res){
     var magasin = new Magasin(req.body);

@@ -4,13 +4,13 @@ var router = express.Router();
 
 var magasin = require("../controllers/magasinControllers");
 
-//recuperer les produits
+//recuperer la liste des magasins
 router.get("/", magasin.list);
 
-//cree un magasin
+//creer un magasin
 router.get("/ajoutmagasin", magasin.create);
 
-//sauvegarder un produit. /!\ cest un POST 
+//sauvegarder un magasin. /!\ cest un POST 
 router.post("/save", magasin.save);
 
 
