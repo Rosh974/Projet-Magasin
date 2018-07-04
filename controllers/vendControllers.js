@@ -55,9 +55,10 @@ vendController.edit = function(req, res){
         if(err){
             console.log("Error ", err);
         } else{
-            res.render("../views/vend/modif",{vend: vend} );
+            res.render("../views/vend/modif",{vend: vend});
         } 
     });
+
 };
 
 //gestion de l'edition dune vente

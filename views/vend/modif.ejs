@@ -61,21 +61,23 @@
         </div>
 
         <div class="col-lg-8 col-md-10 col-sm-12 text-center">
-<!-- Bouton retour liste des ventes -->
+            
+            <!-- Bouton retour liste des ventes -->
             <a class="btn btn-primary mx-auto my-5" href="/vends">Retour liste des ventes</a>
 
-<!-- Formulaire de modification d'une vente qui renvoit à vendControllers.js -->
+            <!-- Formulaire de modification d'une vente qui renvoit à vendControllers.js -->
             <form class="" action="/vends/update/<%= vend._id %>" method="POST">
                 <div class="col-sm-12 my-3">
                     <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Id du produit:</label>
                     <input class="col-sm-5" type="text" name="nom" value="<%= vend.id_produit %>" />
                 </div>
                 <div class="col-sm-12 my-3">
-                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Id du magasin:</label>
-                        <input class="col-sm-5" type="text" name="magasin" value="<%= vend.id_magasin %>" />
-                    </div>
+                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Id du magasin:</label>
+                    <input class="col-sm-5 " type="text" name="enseigne" value="<%= vend.id_magasin %>" />
+                </div>
                 <input class="btn btn-secondary" type="submit" value="Mettre à jour" />
             </form>
+
         </div>
     </div>
 

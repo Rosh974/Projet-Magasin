@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -63,20 +62,24 @@
         <div class="col-lg-8 col-md-10 col-sm-12 text-center">
             <a class="btn btn-primary mx-auto my-5" href="/vends">Retour à la liste des ventes</a>
 
-                <form class="pb-4 mx-auto " action="/vends/save" method="POST">
-                    <div class="form-group">
-                        <div class=" my-3">
-                            <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">id produit:</label>
-                            <input class="col-sm-5" type="text" name="id_produit"/>
-                        </div>
-                        <div class=" my-3">
-                            <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">id magasin:</label>
-                            <input class="col-sm-5" type="text" name="id_magasin" />
-                        </div>
-                        
-                        <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
+
+
+
+            <form class="pb-4 mx-auto " action="/vends/save" method="POST">
+
+                <div class="form-group">
+                    <select id="selectproduit">
+                    </select>
+                    <div class=" my-3">
+                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">id magasin:</label>
+                        <input class="col-sm-5" type="text" name="id_magasin" />
                     </div>
-                </form>
+
+                    <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
+                </div>
+            </form>
+
+
 
         </div>
 
@@ -90,6 +93,7 @@
             crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+        <script src="/produits/produitslist"></script>
 </body>
 
 </html>
