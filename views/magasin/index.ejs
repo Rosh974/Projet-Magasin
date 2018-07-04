@@ -23,6 +23,8 @@
 
 
     <div class="row mx-0">
+
+        <!-- Menu -->
         <div class="bg-dark col-sm-2 pt-5">
             <ul class="nav flex-column">
 
@@ -65,10 +67,11 @@
 
         <div class="col-lg-8 col-md-10 col-sm-12 text-center table-responsive-md">
 
+            <!-- Lien qui renvoit à la page d'ajout d'un magasin et à la fonction "create" de "magasinControllers.js"-->
             <a href="/magasins/ajoutmagasin" class="text-light btn btn-primary mt-5 ">Ajouter un magasin</a>
 
+            <!-- Tableau affichant la base de données magasin -->
             <table class="table table-bordered table-striped mt-5">
-
                 <thead>
                     <tr>
                         <th scope="col">Nom</th>
@@ -77,6 +80,7 @@
                 </thead>
                 <tbody>
 
+                    <!-- Récupération des données de la base de données magasin -->
                     <% magasin.forEach(function(element) {%>
                         <tr>
                             <td>
