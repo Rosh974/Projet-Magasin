@@ -67,15 +67,14 @@
 
             <!-- Formulaire de modification d'une vente qui renvoit à vendControllers.js -->
             <form class="" action="/vends/update/<%= vend._id %>" method="POST">
-                <div class="col-sm-12 my-3">
-                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Id du produit:</label>
-                    <input class="col-sm-5" type="text" name="nom" value="<%= vend.id_produit %>" />
-                </div>
-                <div class="col-sm-12 my-3">
-                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Id du magasin:</label>
-                    <input class="col-sm-5 " type="text" name="enseigne" value="<%= vend.id_magasin %>" />
-                </div>
-                <input class="btn btn-secondary" type="submit" value="Mettre à jour" />
+                <div class="form-group">
+                        <select id="selectproduit" name='nom'>
+                        </select>
+                        <select id="selectmagasin" name='magasin'>
+                        </select>
+    
+                        <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
+                    </div>
             </form>
 
         </div>
@@ -89,6 +88,8 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+        <script src="/produits/produitslist"></script>
+        <script src="/magasins/magasinslist"></script>
 </body>
 
 </html>
