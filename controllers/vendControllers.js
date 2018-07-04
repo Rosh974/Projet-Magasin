@@ -39,12 +39,57 @@ vendController.list = function(req, res) {
         if(err){
             console.log('Error : ', err);
         }else{
-            console.log("->",vend);
+            // console.log("->",vend);
             res.render("../views/vend/index",{vend:vend} );
   
         } 
     });
   };
+
+  //edition d'une vente par son id
+
+vendController.edit = function(req, res){
+    var vend = new Vend(req.body);
+
+    Vend.findOne({_id:req.params.id}).exec(function(err, vend){
+        if(err){
+            console.log("Error ", err);
+        } else{
+            res.render("../views/vend/modif",{vend: vend} );
+        } 
+    });
+};
+
+//gestion de l'edition dune vente
+vendController.update = function(req, res){
+    console.log(req.params.id);
+    console.log(req.body.nom)
+    Vend.findByIdAndUpdate(req.params.id,{ $set :{id_produit: req.body.nom, id_magasin: req.body.magasin} },{new: true}, function (err, vend){
+
+        if (err){
+            console.log(err);
+            res.render("../views/vend/modif",{vend:req.body} );
+        } 
+        res.redirect("/vends");
+        
+    });
+};
+
+
+//suppression d'une vente
+vendController.remove = function(req, res){
+    console.log("vendController",req.params.id)
+    Vend.findByIdAndRemove(req.params.id, function (err, vend){
+
+        if (err){
+            console.log(err);
+            
+        } 
+        res.redirect("/vends");
+        
+    });
+};
+
 
 
 //export du module
