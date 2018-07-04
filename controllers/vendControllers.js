@@ -1,5 +1,8 @@
+// on require le model magasin pour pouvoir faire les jointure entre magasin et produit
 var Magasin = require ("../models/Magasin");
+// on require le model produit pour pouvoir faire les jointure entre magasin et produit
 var Produit = require ("../models/Produit");
+// on require le model vend pour pouvoir créer la collection ou on va faire la jointure entre magasin et produit
 var Vend = require ("../models/vend");
 var mongoose = require('mongoose');
 
@@ -10,7 +13,7 @@ vendController.create = function(req, res){
   res.render("../views/vend/ajout");
 }; 
 
-//enregistrement des magasins
+//enregistrement des ventes
 
 vendController.save = function(req, res){
   var vente = new Vend(req.body);
@@ -27,6 +30,7 @@ vendController.save = function(req, res){
 };
 
 // liste vente
+// voir commentaire dans memo.md
 vendController.list = function(req, res) {
     Vend.find({})
     .populate("id_produit")
