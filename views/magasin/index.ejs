@@ -76,6 +76,7 @@
                     <tr>
                         <th scope="col">Nom</th>
                         <th scope="col">Adresse</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -88,6 +89,15 @@
                             </td>
                             <td>
                                 <%= element.adresse%>
+                            </td>
+                            <td>
+                                <!-- Bouton qui renvoit à la route magasin/edit, qui renvoit à la fonction magasinController.edit -->
+                                <a href="/magasins/edit/<%=element._id %>" role="button">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a type="button" class="btn btn-light bg-transparent" href="/magasins/remove/<%=element._id %>">
+                                    <i class="text-danger fas fa-trash-alt"></i>
+                                </a>
                             </td>
 
                         </tr>

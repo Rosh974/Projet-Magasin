@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Edition de produit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- TODO -->
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+</head>
+
+<body>
+    <div class="container-fluid bg-dark text-light text-center">
+        <h1 class="mx-auto mb-0 p-5">Edition d'un produit</h1>
+    </div>
+
+    <div class="row mx-0">
+        <div class="bg-dark col-sm-2 pt-5">
+            <ul class="nav flex-column">
+
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="/">Accueil</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Produits
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown ">
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/produits">Liste des produits</a>
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/produits/ajoutproduit">Ajouter un produit</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Magasins
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/magasins">Liste des magasins</a>
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/magasins/ajoutmagasin">Ajouter un magasin</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Ventes
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/vends">Liste des ventes</a>
+                        <a class="dropdown-item text-light pb-2 pt-2" href="/vends/ajout">Ajouter une vente</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-8 col-md-10 col-sm-12 text-center">
+
+            <a class="btn btn-primary mx-auto my-5" href="/magasins">Retour liste des magasins</a>
+
+            <form class="" action="/magasins/update/<%= magasin._id %>" method="POST">
+                <div class="col-sm-12 my-3">
+                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Enseigne:</label>
+                    <input class="col-sm-5" type="text" name="enseigne" value="<%= magasin.enseigne %>" />
+                </div>
+                <div class="col-sm-12 my-3">
+                    <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Adresse:</label>
+                    <input class="col-sm-5" type="text" name="adresse" value="<%= magasin.adresse %>" />
+                </div>
+                <input class="btn btn-secondary" type="submit" value="Mettre à jour" />
+            </form>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
