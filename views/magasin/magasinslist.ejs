@@ -1,0 +1,10 @@
+var magasins = "";
+
+<% magasin.forEach(function(element) {%>
+    magasins += "<option value='<%=element._id%>' ><%= element.enseigne%></option>";
+
+<% }); %>
+
+$(document).ready(function() { 
+    $("#selectmagasin").html(magasins);
+});

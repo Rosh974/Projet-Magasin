@@ -81,7 +81,18 @@ magasinController.remove = function(req, res){
 };
 
 
+magasinController.magasinslist = function(req,res) {
+    Magasin.find({}).exec(function(err, magasin){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            //console.log("->",produit);
+            res.render("../views/magasin/magasinslist",{magasin:magasin} );
+  
+        } 
+    });
 
+}
 
 
 
