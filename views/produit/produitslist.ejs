@@ -1,0 +1,10 @@
+ var produits = "";
+
+<% produits.forEach(function(element) {%>
+    produits += "<option value=<%=element._id%> type='text' name='id_produit'><%= element.nomproduit%></option>";
+
+<% }); %>
+
+$(document).ready(function() { 
+    $("#selectproduit").html(produits);
+});

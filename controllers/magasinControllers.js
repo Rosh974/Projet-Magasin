@@ -62,7 +62,7 @@ magasinController.update = function(req, res){
             res.render("../views/magasin/edit",{magasin:req.body} );
         } 
         res.redirect("/magasins");
-        
+       
     });
 };
 

@@ -122,5 +122,18 @@ produitController.remove = function(req, res){
 };
 
 
+produitController.produitslist = function(req,res) {
+    Produit.find({}).exec(function(err, produit){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            //console.log("->",produit);
+            res.render("../views/produit/produitslist",{produits:produit} );
+  
+        } 
+    });
+
+}
+
 //export du module
 module.exports = produitController;
