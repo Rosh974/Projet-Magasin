@@ -123,9 +123,9 @@ Appeler les données de la base de données
 
 
 
-// FAIRE LA JOINTURE ENTRE 2 COLLECTIONS
+# FAIRE LA JOINTURE ENTRE 2 COLLECTIONS
 
-Schema pour faire le  lien entre deux collections
+Schema pour faire le  lien entre deux collections (dans dossier Models, nouveau fichier vend.js)
 
 ```javascript
 
@@ -145,7 +145,7 @@ module.exports = mongoose.model("Vend", vendSchema);
 
 
 
-liste vente
+liste vente (dans fichier vendController.js)
 
 ```javascript
 vendController.list = function(req, res) {
@@ -167,4 +167,53 @@ vendController.list = function(req, res) {
         } 
     });
   };
+```
+
+# Pour ajouter une vente en choisissant dans un MENU DEROULANT les éléments "produits" et "magasins" et faire la jointure sur ejs:
+
+- Créer un nouveau fichier "produitslists.ejs"
+- Créer une route dans produits.js : 
+router.get("/produitslist", produit.produitslist);
+
+- Créer la fonction dans produitsController:
+```javascript
+produitController.produitslist = function(req,res) {
+    Produit.find({}).exec(function(err, produit){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            //console.log("->",produit);
+            res.render("../views/produit/produitslist",{produits:produit} );
+  
+        } 
+    });
+}
+```
+- Créer le formulaire d'ajout d'une vente sur "ajout.ejs"
+```javascript
+            <form class="pb-4 mx-auto " action="/vends/save" method="POST">
+
+                <div class="form-group">
+                    <select id="selectproduit" name='id_produit'>
+                    </select>
+                    <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
+                </div>
+            </form>
+```
+/!\ Ne pas oublier de rajouter le lien script du fichier produitslist.ejs:
+<script src="/produits/produitslist"></script>
+
+
+- Ajouter le javascript dans "produitslist.ejs":
+```javascript
+ var produits = "";
+
+<% produits.forEach(function(element) {%>
+    produits += "<option value='<%=element._id%>' ><%= element.nomproduit%></option>";
+
+<% }); %>
+
+$(document).ready(function() { 
+    $("#selectproduit").html(produits);
+});
 ```
