@@ -4,13 +4,13 @@ var router = express.Router();
 
 var vends= require("../controllers/vendControllers");
 
-//recuperer les produits
+//recuperer les ventes
 router.get("/", vends.list);
 
-//cree un magasin
+//cree une vente
 router.get("/ajout", vends.create);
 
-//sauvegarder un produit. /!\ cest un POST 
+//sauvegarder une vente. /!\ cest un POST 
 router.post("/save", vends.save);
 
 
