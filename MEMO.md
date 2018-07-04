@@ -120,3 +120,50 @@ module.exports = produitController;
 # DANS LE DOSSIER VIEWS
 
 Appeler les données de la base de données
+
+
+
+
+
+Schema pour faire le  lien entre deux collections
+
+```javascript
+
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var vendSchema = new mongoose.Schema({
+    id_produit:[{ type: Schema.Types.ObjectId, ref: 'produit' }],
+    id_magasin: [{ type: Schema.Types.ObjectId, ref: 'magasin' }]
+});
+
+
+
+module.exports = mongoose.model("Vend", vendSchema);
+```
+
+
+
+liste vente
+
+```javascript
+vendController.list = function(req, res) {
+    Vend.find({})
+
+   // fonction qui dit qu'on prend tout les donnée qui son dans la collection produit par son ID
+    .populate("id_produit")
+     // fonction qui dit qu'on prend tout les donnée qui son dans la collection magasin par son ID
+    .populate("id_magasin")
+    // cela permet d'avoir toute les information qui sont dans la collection produit et magasin dans la nouvelle
+    // collection  qui s'appel vends apres la jointure des 2 collecrtions
+    .exec(function(err, vend){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            console.log("->",vend);
+            res.render("../views/vend/index",{vend:vend} );
+  
+        } 
+    });
+  };
+```
