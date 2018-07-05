@@ -1,11 +1,16 @@
 var express = require('express');
 var router = express.Router();
-
-
-
-// A MODIFIER SI BESOIN !!!
-
 var produit = require("../controllers/produitsControllers");
+
+function requireLogin (req, res, next) {
+    if (req.session && req.session.userId) {
+        next();
+    }else {
+        var err = new Error('error 404');
+        err.status = 401;
+        res.redirect('/profiles/ajoutuser');
+    }
+};
 
 //recuperer les produits
 router.get("/", produit.list);
@@ -17,13 +22,13 @@ router.get("/ajoutproduit", produit.create);
 router.post("/save", produit.save);
 
 // editer un produit
-router.get("/edit/:id", produit.edit);
+router.get("/edit/:id",requireLogin, produit.edit);
 
 // edit update.  /!\ cest un POST 
-router.post("/update/:id", produit.update);
+router.post("/update/:id", requireLogin, produit.update);
 
 // supprimer un produit
-router.get("/remove/:id", produit.remove);
+router.get("/remove/:id", requireLogin, produit.remove);
 
 router.get("/produitslist", produit.produitslist);
 

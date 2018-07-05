@@ -1,8 +1,9 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <title>Gestion des magasins</title>
+    <title>LOGIN</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,11 +15,11 @@
 
 <body>
     <div class="container-fluid bg-dark text-light text-center">
-        <h1 class="mx-auto mb-0 p-5">Ajouter un magasin</h1>
+        <h1 class="mx-auto mb-0 p-5">LOGIN</h1>
     </div>
 
     <div class="row mx-0">
-        <!-- Menu -->
+<!-- Menu -->
         <div class="bg-dark col-sm-2 pt-5">
             <ul class="nav flex-column">
 
@@ -59,27 +60,44 @@
             </ul>
         </div>
 
+
         <div class="col-lg-8 col-md-10 col-sm-12 text-center">
+            <a class="btn btn-primary mx-auto my-5" href="/profiles">Liste des utilisateurs</a>
 
-            <!-- Bouton de retour à la liste des magasins -->
-            <a class="btn btn-primary mx-auto my-5" href="/magasins">Retour à la liste des magasins</a>
-
-            <!-- Formulaire d'ajout d'un magasin qui renvoit à la fonction "save" dans "magasinControllers.js"-->
-            <form class="pb-4 mx-auto " action="/magasins/save" method="POST">
+            <div class="row justify-content-between">
+            <form class= "col-lg-4 m-4" action="/profiles/save" method="POST">
+                <h1>S'inscrire</h1>
                 <div class="form-group">
-                    <div class=" my-3">
-                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Nom du magasin:</label>
-                        <input class="col-sm-5" type="text" name="enseigne" placeholder="nom du magasin" />
-                    </div>
-                    <div class=" my-3">
-                        <label for="colFormLabelSm" class="col-sm-5 col-form-label col-form-label-sm">Adresse:</label>
-                        <input class="col-sm-5" type="text" name="adresse" placeholder="adresse" />
-                    </div>
-
-                    <button type="submit" class="btn btn-secondary my-5">Ajouter</button>
+                  <label for="Username">username:</label>
+                  <input type="text" class="form-control" name="username">
                 </div>
-            </form>
+                <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" class="form-control" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="passwordConf">Confirm password:</label>
+                    <input type="password" class="form-control" name="passwordConfirmation">
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form> 
+
+              <form class= "col-lg-4 m-4" action="/profiles/auth" method="POST">
+                <h1>Se connecter</h1>
+                <div class="form-group">
+                  <label for="Username">username:</label>
+                  <input type="text" class="form-control" name="Username">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" class="form-control" name="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form> 
+            </div>
         </div>
+
+
 
 
 
@@ -91,6 +109,9 @@
             crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+        <script src="/produits/produitslist"></script>
+        <script src="/magasins/magasinslist"></script>
+
 </body>
 
 </html>

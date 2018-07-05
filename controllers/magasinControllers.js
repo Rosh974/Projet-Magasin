@@ -55,7 +55,7 @@ magasinController.edit = function(req, res){
 //gestion de l'edition dun produit
 magasinController.update = function(req, res){
    
-    Magasin.findByIdAndUpdate(req.params.id,{ $set :{enseigne: req.body.enseigne, adresse: req.body.adresse} },{new: true}, function (err, produit){
+    Magasin.findByIdAndUpdate(req.params.id,{ $set :{enseigne: req.body.enseigne, adresse: req.body.adresse} },{new: true}, function (err, magasin){
 
         if (err){
             console.log(err);
@@ -93,8 +93,6 @@ magasinController.magasinslist = function(req,res) {
     });
 
 }
-
-
 
   //export du module
 module.exports = magasinController;
