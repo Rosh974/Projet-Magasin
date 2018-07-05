@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var bodyParser = require("body-parser");
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var db = mongoose.connection;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,7 +19,7 @@ var url = "mongodb://localhost/projetmagasin";
 mongoose.Promise = global.Promise;
 
 mongoose.connect(url)
-  .then(() =>  console.log('connection succesful'))
+  .then(() => console.log('connection succesful'))
 
 
 // view engine setup
@@ -31,6 +35,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//use sessions for tracking logins
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
+}));
 
 //routes produits
 var produits = require("./routes/produits");
@@ -44,13 +59,17 @@ app.use("/magasins", magasins);
 var vends = require("./routes/vends");
 app.use("/vends", vends);
 
+// routes profiles
+var userSession = require("./routes/userSession");
+app.use("/profiles", userSession);
+
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -61,11 +80,8 @@ app.use(function(err, req, res, next) {
 });
 
 
-
-
-
 module.exports = app;
 
 
-  
+
 

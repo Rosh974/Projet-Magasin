@@ -36,6 +36,7 @@ vendController.list = function(req, res) {
     .populate("id_produit")
     .populate("id_magasin")
     .exec(function(err, vend){
+        console.log(vend)
         if(err){
             console.log('Error : ', err);
         }else{
@@ -65,7 +66,7 @@ vendController.edit = function(req, res){
 vendController.update = function(req, res){
     console.log(req.params.id);
     console.log(req.body.nom)
-    Vend.findByIdAndUpdate(req.params.id,{ $set :{id_produit: req.body.nom, id_magasin: req.body.magasin} },{new: true}, function (err, vend){
+    Vend.findByIdAndUpdate(req.params.id,{ $set :{id_produit: req.body.nom, id_magasin: req.body.enseigne} },{new: true}, function (err, vend){
 
         if (err){
             console.log(err);

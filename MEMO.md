@@ -204,6 +204,7 @@ produitController.produitslist = function(req,res) {
 <script src="/produits/produitslist"></script>
 
 
+
 - Ajouter le javascript dans "produitslist.ejs":
 ```javascript
  var produits = "";
