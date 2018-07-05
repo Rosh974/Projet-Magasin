@@ -204,4 +204,39 @@ userController.auth = function (req, res) {
 };
 ```
 
+- Fonction LOGOUT pour se déconnecter
 
+```javascript
+userController.logout = function(req, res){
+  if (req.session){
+      // supprimer la session
+      console.log(req.session);
+      req.session.destroy(function(err){
+          if(!err){
+              res.redirect('/')
+          }else {
+              console.log("error => ", err);
+          }
+      })
+  }
+};
+```
+
+- Dans les routes dont on veut bloquer l'accès, on rajoute la fonction:
+
+```javascript
+function requireLogin (req, res, next) {
+    if (req.session && req.session.userId) {
+        next();
+    }else {
+        var err = new Error('error 404');
+        err.status = 401;
+        res.redirect('/');
+    }
+};
+```
+--> Puis on met "requireLogin" :
+
+```javascript
+router.get("/remove/:id", requireLogin, User.remove);
+```
